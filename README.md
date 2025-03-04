@@ -1,4 +1,4 @@
-# AdvaithKandiraju_portfolio_2.0
+# Advaith Kandiraju Portfolio 2.0
 
 This is a personal portfolio website built using HTML, CSS, and JavaScript. The website includes various sections like About, Projects, Experience, Education, and Contact. It is designed with a clean, modern aesthetic featuring smooth scrolling and animations for an engaging user experience.
 
