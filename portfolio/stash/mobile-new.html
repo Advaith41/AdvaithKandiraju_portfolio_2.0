@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 60px 0 0 0;
+            background: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background: #242424;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #navbar a {
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        #navbar a i {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        #navbar a.active {
+            color: #CD7F32;
+        }
+
+        #content > div {
+            display: none;
+            padding: 20px;
+        }
+
+        #content > div.visible {
+            display: block;
+        }
+
+        /* Additional styles for content */
+        .project-card {
+            background: #242424;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+
+        /* Add more styles as needed */
+
+        /* Add these styles from styles.css */
+        :root {
+            --primary-black: #1a1a1a;
+            --secondary-black: #242424;
+            --primary-brown: #CD7F32;
+            --secondary-brown: #8B4513;
+            --light-brown: #DEB887;
+            --text-light: #e0e0e0;
+        }
+
+        /* Content Styling */
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-brown);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Projects Section */
+        .projects-slider-container {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .project-card {
+            background: var(--secondary-black);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .project-title {
+            color: var(--primary-brown);
+            margin-bottom: 15px;
+        }
+
+        .project-content {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Experience Section */
+        .experience-nav-container {
+            margin-bottom: 20px;
+        }
+
+        .company-list {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        .company-btn {
+            background: transparent;
+            border: 1px solid var(--primary-brown);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .company-btn.active {
+            background: var(--primary-brown);
+        }
+
+        .experience-content {
+            display: none;
+            padding: 20px;
+            background: var(--secondary-black);
+            border-radius: 15px;
+        }
+
+        .experience-content.active {
+            display: block;
+        }
+
+        /* Education Section */
+        .education-item {
+            background: var(--secondary-black);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .edu-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .edu-content h2 {
+            color: var(--primary-brown);
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact-form {
+            background: var(--secondary-black);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            background: var(--primary-black);
+            border: 1px solid var(--primary-brown);
+            border-radius: 8px;
+            color: var(--text-light);
+        }
+
+        .submit-btn {
+            background: var(--primary-brown);
+            color: var(--text-light);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Additional mobile-specific styles */
+        @media (max-width: 480px) {
+            .project-nav-btn {
+                width: 30px;
+                height: 30px;
+            }
+
+            .education-item {
+                flex-direction: column;
+            }
+
+            .company-list {
+                padding: 0 10px;
+            }
+        }
+
+        /* Add these styles to the style section */
+        .project-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(205, 127, 50, 0.8);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
+
+        .nav-arrow {
+            background: transparent;
+            border: 1px solid var(--primary-brown);
+            color: var(--text-light);
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .job-title {
+            color: var(--primary-brown);
+            margin-bottom: 10px;
+        }
+
+        .job-duration {
+            color: var(--light-brown);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .job-responsibilities li {
+            margin-bottom: 10px;
+        }
+
+        .location-container {
+            margin-bottom: 30px;
+        }
+
+        .location-title {
+            color: var(--primary-brown);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .tool-tag {
+            display: inline-block;
+            background: var(--secondary-brown);
+            color: var(--text-light);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .view-more-btn {
+            display: inline-block;
+            background: var(--primary-brown);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* Make sure project images are visible */
+        .project-image {
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Top Navigation Bar -->
+        <nav class="navigation-sidebar">
+            <div class="nav-sections">
+                <a href="#profile" class="nav-section" onclick="showPage('profile')">
+                    <i class="fas fa-user"></i>
+                    Profile
+                </a>
+                <a href="#about" class="nav-section" onclick="showPage('about')">
+                    <i class="fas fa-info-circle"></i>
+                    About
+                </a>
+                <a href="#projects" class="nav-section" onclick="showPage('projects')">
+                    <i class="fas fa-code"></i>
+                    Projects
+                </a>
+                <a href="#experience" class="nav-section" onclick="showPage('experience')">
+                    <i class="fas fa-briefcase"></i>
+                    Experience
+                </a>
+                <a href="#education" class="nav-section" onclick="showPage('education')">
+                    <i class="fas fa-graduation-cap"></i>
+                    Education
+                </a>
+                <a href="#contact" class="nav-section" onclick="showPage('contact')">
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </a>
+            </div>
+        </nav>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Profile Section -->
+            <div id="profile" class="content-section">
+                <div class="profile-header">
+                    <div class="profile-image">
+                        <img src="profile-photo.jpeg" alt="Advaith Kandiraju">
+                    </div>
+                    <h2 class="profile-name">Advaith Kandiraju</h2>
+                    <p class="profile-degree">MS Robotics</p>
+                </div>
+                
+                <div class="contact-info">
+                    <a href="mailto:kandiraju.v@northeastern.edu" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>kandiraju.v@northeastern.edu</span>
+                    </a>
+                    <a href="tel:+18583195620" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 858-319-5620</span>
+                    </a>
+                    <a href="https://github.com/Advaith41" class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <span>github/advaith41</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/advaithkandiraju/" class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin/advaithkandiraju</span>
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1wtNvx8dYoa7Z8iwptS9Wzz8p8T8AAIpA?usp=drive_link" class="contact-item">
+                        <i class="fas fa-photo-video"></i>
+                        <span>ProjectsMedia</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Keep your existing sections -->
+            <div id="about" class="content-section">
+                <div class="video-container">
+                    <video autoplay loop muted playsinline style="mix-blend-mode: screen;">
+                        <source src="vid.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="about-content">
+                    <div class="intro">
+                        <h2>Hi, I'm Advaith :)</h2>
+                        <p class="intro-text">I am currently a Robotics Engineer at Rainier Labs, working in the perception and planning development stack. I finished my Master of Science in Robotics from Northeastern University. You can learn more about me on this website!</p>
+                    </div>
+
+                    <div class="technologies">
+                        <h3>Here are some technologies I have been working with:</h3>
+                        <ul class="tech-list">
+                            <li>Nvidia Isaac Lab</li>
+                            <li>Python</li>
+                            <li>C++</li>
+                            <li>Solidworks</li>
+                            <li>Onshape</li>
+                            <li>OpenCV</li>
+                        </ul>
+                    </div>
+
+                    <div class="personal">
+                        <p>Outside of work, I'm interested in following the developments of science, mostly Robotics. I like listening and making music, I've been playing the Keyboard for almost 15 years now.</p>
+                        <p>I'm open to discussing opportunities and collaborations. Feel free to reach out!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="projects" class="content-section">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-slider-container">
+                    <button class="project-nav-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="projects-slider">
+                        <div class="project-slide active" data-index="0">
+                            <div class="project-card">
+                                <h2 class="project-title">Kitti Dataset Visual SLAM and Odometry</h2>
+                                <div class="project-content">
+                                    <div class="project-image">
+                                        <img src="vslamkitti.gif" alt="Kitti Dataset Visual SLAM and Odometry">
+                                    </div>
+                                    <div class="project-description">
+                                        <a href="https://github.com/Advaith41/VectorNav-dead-reckoning" class="view-more-btn">
+                                            <i class="fab fa-github"></i> View on GitHub
+                                        </a>
+                                        <p>Implemented visual odometry using the KITTI dataset, applying stereo matching techniques like SGBM and SIFT to estimate vehicle poses. Integrated LIDAR data for ground truth, starting with Depth calculation, Feature detection and ending with pose estimation.</p>
+                                    </div>
+                                    <div class="project-technologies">
+                                        <span class="tool-tag">Python</span>
+                                        <span class="tool-tag">C++</span>
+                                        <span class="tool-tag">OpenCV</span>
+                                        <span class="tool-tag">RANSAC</span>
+                                        <span class="tool-tag">MATPLOTLIB</span>
+                                        <span class="tool-tag">Kalman Filter</span>
+                                        <span class="tool-tag">Jupyter Notebook</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-slide" data-index="1">
+                            <div class="project-card">
+                                <h2 class="project-title">isPy Locobot wx250s - Navigation and Path Planning</h2>
+                                <div class="project-content">
+                                    <div class="project-image">
+                                        <img src="locobot.gif" alt="isPy Locobot wx250s - Navigation and Path Planning Sim">
+                                    </div>
+                                    <div class="project-description">
+                                        <a href="https://github.com/Advaith41/isPy-Locobot" class="view-more-btn">
+                                            <i class="fab fa-github"></i> View on GitHub
+                                        </a>
+                                        <p>The iSPy robot helps users locate and interact with objects using YOLOv5 for object detection, Intel RealSense D435 for depth sensing, and RTAB-Map for SLAM-based localization. It also features a GUI for interaction, real-time object addition, and a dancing feature based on user-selected music.</p>
+                                    </div>
+                                    <div class="project-technologies">
+                                        <span class="tool-tag">ROS</span>
+                                        <span class="tool-tag">Gazebo</span>
+                                        <span class="tool-tag">pyQT</span>
+                                        <span class="tool-tag">YOLOv5</span>
+                                        <span class="tool-tag">RTAB-Map</span>
+                                        <span class="tool-tag">OpenCV</span>
+                                        <span class="tool-tag">Librosa</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="project-nav-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="experience" class="content-section">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-nav-container">
+                    <button class="nav-arrow left" id="scrollLeft">←</button>
+                    <div class="company-list">
+                        <button class="company-btn active" data-tab="rainier">RAINIER LABS</button>
+                        <button class="company-btn" data-tab="waters">WATERS CORPORATION</button>
+                        <button class="company-btn" data-tab="northeastern">NORTHEASTERN UNIVERSITY</button>
+                        <button class="company-btn" data-tab="vyjayanthi">VYJAYANTHI MOVIES</button>
+                        <button class="company-btn" data-tab="auv">AUV SOCIETY</button>
+                    </div>
+                    <button class="nav-arrow right" id="scrollRight">→</button>
+                </div>
+                
+                <div class="experience-content active" id="rainier">
+                    <h3 class="job-title">Robotics Engineer <span class="company-name">@ Rainier Labs</span></h3>
+                    <p class="job-duration">JAN 2024 - PRESENT</p>
+                    <ul class="job-responsibilities">
+                        <li>Developing perception and planning algorithms for autonomous robots</li>
+                        <li>Implementing computer vision solutions using OpenCV and deep learning</li>
+                        <li>Collaborating with cross-functional teams to integrate software and hardware components</li>
+                        <li>Designing and implementing robotic control systems for industrial applications</li>
+                        <li>Optimizing algorithms for real-time performance on embedded systems</li>
+                    </ul>
+                    <div class="tools-used">
+                        <span class="tool-tag">ROS</span>
+                        <span class="tool-tag">Python</span>
+                        <span class="tool-tag">C++</span>
+                        <span class="tool-tag">OpenCV</span>
+                        <span class="tool-tag">Deep Learning</span>
+                        <span class="tool-tag">SLAM</span>
+                        <span class="tool-tag">Path Planning</span>
+                    </div>
+                </div>
+
+                <div class="experience-content" id="waters">
+                    <h3 class="job-title">Robotics Intern <span class="company-name">@ Waters Corporation</span></h3>
+                    <p class="job-duration">MAY 2023 - AUG 2023</p>
+                    <ul class="job-responsibilities">
+                        <li>Assisted in the development of automated laboratory systems</li>
+                        <li>Implemented control algorithms for precision liquid handling</li>
+                        <li>Conducted testing and validation of robotic components</li>
+                        <li>Developed software interfaces for laboratory automation equipment</li>
+                        <li>Collaborated with cross-functional teams to integrate hardware and software solutions</li>
+                    </ul>
+                    <div class="tools-used">
+                        <span class="tool-tag">Python</span>
+                        <span class="tool-tag">LabVIEW</span>
+                        <span class="tool-tag">Control Systems</span>
+                        <span class="tool-tag">Robotics</span>
+                        <span class="tool-tag">Testing</span>
+                    </div>
+                </div>
+
+                <div class="experience-content" id="northeastern">
+                    <h3 class="job-title">Research Assistant</h3>
+                    <p class="job-duration">SEP 2022 - DEC 2023</p>
+                    <ul class="job-responsibilities">
+                        <li>Conducted research on autonomous navigation algorithms</li>
+                        <li>Developed simulation environments for testing robot behaviors</li>
+                        <li>Published findings in academic conferences and journals</li>
+                    </ul>
+                </div>
+
+                <div class="experience-content" id="vyjayanthi">
+                    <h3 class="job-title">VFX Intern</h3>
+                    <p class="job-duration">MAY 2021 - AUG 2021</p>
+                    <ul class="job-responsibilities">
+                        <li>Assisted in creating visual effects for film productions</li>
+                        <li>Worked with motion capture data and 3D modeling</li>
+                        <li>Collaborated with the creative team on special effects implementation</li>
+                    </ul>
+                </div>
+
+                <div class="experience-content" id="auv">
+                    <h3 class="job-title">Technical Team Member</h3>
+                    <p class="job-duration">JAN 2020 - MAY 2022</p>
+                    <ul class="job-responsibilities">
+                        <li>Designed and built autonomous underwater vehicles for competitions</li>
+                        <li>Implemented computer vision algorithms for object detection</li>
+                        <li>Developed control systems for precise underwater navigation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="education" class="content-section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-container">
+                    <div class="education-item">
+                        <div class="edu-image">
+                            <img src="NU Logo.jpg" alt="Northeastern University">
+                        </div>
+                        <div class="edu-content">
+                            <h2>Master of Science - Robotics</h2>
+                            <h3>Northeastern University</h3>
+                            <p class="duration">SEP 2022 - DEC 2024</p>
+                            <p class="coursework">Relevant coursework: Robot Sensing and Navigation, Robot Mechanics and Control, Legged Robots, Pattern Recognition and Computer Vision, Robotic Science and Systems, Control Systems Engineering, Human Computer Interaction, Product Development for Engineers</p>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="edu-image">
+                            <img src="Stanford Logo.jpg" alt="Stanford University">
+                        </div>
+                        <div class="edu-content">
+                            <h2>Introduction to Robotics</h2>
+                            <h3>Stanford University</h3>
+                            <p class="duration">SPRING 2022</p>
+                            <p class="instructor">Prof. Oussama Khatib</p>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="edu-image">
+                            <img src="IIITDM Logo.jpg" alt="IIITDM Chennai">
+                        </div>
+                        <div class="edu-content">
+                            <h2>Bachelor of Technology - Mechanical Engineering</h2>
+                            <h3>Indian Institute of Information Technology Design and Manufacturing, Chennai</h3>
+                            <p class="specialization">Specialisation in Smart Manufacturing</p>
+                            <p class="duration">SEP 2018 - MAY 2022</p>
+                            <p class="coursework">Relevant coursework: Computer Engineering, Engineering Mechanics, Engineering Skills, Engineering Electromagnetics, Basic Electrical and Electronics Engineering, Industrial Design Sketching, Production Drawing, Manufacturing Processes, Electrical Drives, Sensors and Controls, Operations and Supply Chain Management, Robotics and Automation, Quality Engineering, Mechanical Design, Design Optimization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contact" class="content-section">
+                <h2 class="section-title">Contact</h2>
+                <div class="location-container">
+                    <h3 class="location-title">San Jose, California</h3>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101801.48959077906!2d-121.9745906771903!3d37.33370249168954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcca1767e752f%3A0xd291c6b0dee3e55e!2sSan%20Jose%2C%20CA!5e0!3m2!1sen!2sus!4v1623456789012!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="250" 
+                            style="border:0; border-radius: 15px;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form action="https://formsubmit.co/kandiraju.v@northeastern.edu" method="POST" class="contact-form" id="contactForm">
+                        <input type="text" name="_honey" style="display: none">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="false">
+                        
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+                        <div class="submission-status" id="submissionStatus"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show selected section
+            document.getElementById(pageId).style.display = 'block';
+            
+            // Update navigation active state
+            document.querySelectorAll('.nav-section').forEach(nav => {
+                nav.classList.remove('active');
+            });
+            document.querySelector(`[href="#${pageId}"]`).classList.add('active');
+        }
+
+        // Show profile page by default
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('profile');
+        });
+
+        // Projects slider functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Projects slider functionality
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const slides = document.querySelectorAll('.project-slide');
+            
+            if (prevBtn && nextBtn && slides.length) {
+                let currentIndex = 0;
+                
+                function updateSlides() {
+                    slides.forEach((slide, index) => {
+                        slide.style.display = index === currentIndex ? 'block' : 'none';
+                        slide.classList.toggle('active', index === currentIndex);
+                    });
+                }
+                
+                // Add these console logs to debug
+                console.log("Found prev button:", prevBtn);
+                console.log("Found next button:", nextBtn);
+                console.log("Found slides:", slides.length);
+                
+                prevBtn.onclick = function(e) {
+                    e.preventDefault();
+                    console.log("Prev button clicked");
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    updateSlides();
+                };
+                
+                nextBtn.onclick = function(e) {
+                    e.preventDefault();
+                    console.log("Next button clicked");
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    updateSlides();
+                };
+                
+                // Initialize slides
+                updateSlides();
+            } else {
+                console.log("Could not find navigation elements");
+            }
+        });
+
+        // Experience tabs functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Experience tabs functionality
+            const companyBtns = document.querySelectorAll('.company-btn');
+            const experienceContents = document.querySelectorAll('.experience-content');
+            
+            if (companyBtns.length && experienceContents.length) {
+                companyBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const targetTab = this.getAttribute('data-tab');
+                        
+                        // Remove active class from all buttons and contents
+                        companyBtns.forEach(b => b.classList.remove('active'));
+                        experienceContents.forEach(content => content.classList.remove('active'));
+                        
+                        // Add active class to clicked button and corresponding content
+                        this.classList.add('active');
+                        document.getElementById(targetTab).classList.add('active');
+                    });
+                });
+                
+                // Handle horizontal scrolling for company list
+                const scrollLeft = document.getElementById('scrollLeft');
+                const scrollRight = document.getElementById('scrollRight');
+                const companyList = document.querySelector('.company-list');
+                
+                if (scrollLeft && scrollRight && companyList) {
+                    const scrollDistance = 200;
+                    
+                    scrollLeft.addEventListener('click', function() {
+                        companyList.scrollBy({ left: -scrollDistance, behavior: 'smooth' });
+                    });
+                    
+                    scrollRight.addEventListener('click', function() {
+                        companyList.scrollBy({ left: scrollDistance, behavior: 'smooth' });
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

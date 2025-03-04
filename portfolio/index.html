@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advaith Kandiraju</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Left: Profile Sidebar (Static) -->
+        <div class="profile-sidebar">
+            <div class="profile-image">
+                <img src="profile-photo.jpeg" alt="Advaith Kandiraju">
+            </div>
+            <h2 class="profile-name">Advaith Kandiraju</h2>
+            <p class="profile-degree">MS Robotics</p>
+            
+            <div class="contact-info">
+                <a href="mailto:kandiraju.v@northeastern.edu" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>kandiraju.v@northeastern.edu</span>
+                </a>
+                <a href="tel:+18583195620" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+1 858-319-5620</span>
+                </a>
+                <a href="https://github.com/Advaith41" target="_blank" class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>github/advaith41</span>
+                </a>
+                <a href="https://www.linkedin.com/in/advaithkandiraju/" target="_blank" class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin/advaithkandiraju</span>
+                </a>
+                <a href="https://drive.google.com/drive/folders/1wtNvx8dYoa7Z8iwptS9Wzz8p8T8AAIpA?usp=drive_link" target="_blank" class="contact-item">
+                    <i class="fas fa-photo-video"></i>
+                    <span>ProjectsMedia</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Add the content area -->
+        <main class="content-area">
+            <!-- About Section -->
+            <section id="about" class="content-section">
+                <h1 class="section-title">About</h1>
+                
+                <div class="video-container">
+                    <video autoplay loop muted playsinline style="mix-blend-mode: screen;">
+                        <source src="vid.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="about-content">
+                    <div class="intro">
+                        <h2>Hi, I'm Advaith :)</h2>
+                        <p class="intro-text">I am currently a Robotics Engineer at Rainier Labs, working in the perception and planning development stack. I finished my Master of Science in Robotics from Northeastern University. You can learn more about me on this website!</p>
+                    </div>
+
+                    <div class="technologies">
+                        <h3>Here are some technologies I have been working with:</h3>
+                        <ul class="tech-list">
+                            <li>Nvidia Isaac Lab</li>
+                            <li>Python</li>
+                            <li>C++</li>
+                            <li>Solidworks</li>
+                            <li>Onshape</li>
+                            <li>OpenCV</li>
+                        </ul>
+                    </div>
+
+                    <div class="personal">
+                        <p>Outside of work, I'm interested in following the developments of science, mostly Robotics. I like listening and making music, I've been playing the Keyboard for almost 15 years now.</p>
+                        <p>I'm open to discussing opportunities and collaborations. Feel free to reach out!</p>
+                    </div>
+
+                    <div class="about-image">
+                        <img src="about.jpg" alt="About Me">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <!-- Replace your current projects section with this code -->
+            <section id="projects" class="content-section">
+                <h1 class="section-title">Projects</h1>
+                
+                <div class="projects-slider-container">
+                    <button class="project-nav-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="projects-slider">
+                        <!-- Project 1 -->
+                        <div class="project-slide active" data-index="0">
+                            <div class="project-card">
+                                <h2 class="project-title">Kitti Dataset Visual SLAM and Odometry</h2>
+                                <div class="project-content">
+                                    <div>
+                                        <div class="project-image">
+                                            <img src="vslamkitti.gif" alt="Kitti Dataset Visual SLAM and Odometry">
+                                        </div>
+                                        <div class="project-description">
+                                            <a href="https://github.com/Advaith41/VectorNav-dead-reckoning" class="view-more-btn">
+                                                <i class="fab fa-github"></i> View on GitHub
+                                            </a>
+                                            <p>Implemented visual odometry using the KITTI dataset, applying stereo matching techniques like SGBM and SIFT to estimate vehicle poses. Integrated LIDAR data for ground truth, starting with Depth calculation, Feature detection and ending with pose estimation.</p>
+                                        </div>
+                                        <div class="project-technologies">
+                                            <span class="tool-tag">Python</span>
+                                            <span class="tool-tag">C++</span>
+                                            <span class="tool-tag">OpenCV</span>
+                                            <span class="tool-tag">RANSAC</span>
+                                            <span class="tool-tag">MATPLOTLIB</span>
+                                            <span class="tool-tag">Kalman Filter</span>
+                                            <span class="tool-tag">Jupyter Notebook</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="project-slide" data-index="1">
+                            <div class="project-card">
+                                <h2 class="project-title">isPy Locobot wx250s - Navigation and Path Planning</h2>
+                                <div class="project-content">
+                                    <div>
+                                        <div class="project-image">
+                                            <img src="locobot.gif" alt="isPy Locobot wx250s - Navigation and Path Planning Sim">
+                                        </div>
+                                        <div class="project-description">
+                                            <a href="https://github.com/Advaith41/isPy-Locobot" class="view-more-btn">
+                                                <i class="fab fa-github"></i> View on GitHub
+                                            </a>
+                                            <p>The iSPy robot helps users locate and interact with objects using YOLOv5 for object detection, Intel RealSense D435 for depth sensing, and RTAB-Map for SLAM-based localization. It also features a GUI for interaction, real-time object addition, and a dancing feature based on user-selected music.</p>
+                                        </div>
+                                        <div class="project-technologies">
+                                            <span class="tool-tag">ROS</span>
+                                            <span class="tool-tag">Gazebo</span>
+                                            <span class="tool-tag">pyQT</span>
+                                            <span class="tool-tag">YOLOv5</span>
+                                            <span class="tool-tag">RTAB-Map</span>
+                                            <span class="tool-tag">OpenCV</span>
+                                            <span class="tool-tag">Librosa</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="project-slide" data-index="2">
+                            <div class="project-card">
+                                <h2 class="project-title">VectorNav Dead Reckoning and Sensor Fusion</h2>
+                                <div class="project-content">
+                                    <div>
+                                        <div class="project-image">
+                                            <img src="vectornav.png" alt="VectorNav Dead Reckoning and Sensor Fusion">
+                                        </div>
+                                        <div class="project-description">
+                                            <a href="https://github.com/Advaith41/VectorNav-dead-reckoning" class="view-more-btn">
+                                                <i class="fab fa-github"></i> View on GitHub
+                                            </a>
+                                            <p>Implemented sensor fusion and dead reckoning using IMU data, calibrating magnetometer data, estimating yaw angle with a complementary filter, and integrating velocity and angular velocity. Compared the IMU's path with GPS data to assess accuracy.</p>
+                                        </div>
+                                        <div class="project-technologies">
+                                            <span class="tool-tag">Python</span>
+                                            <span class="tool-tag">ROS</span>
+                                            <span class="tool-tag">Kalman Filter</span>
+                                            <span class="tool-tag">IMU</span>
+                                            <span class="tool-tag">MATLAB</span>
+                                            <span class="tool-tag">Jupyter Notebook</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="project-slide" data-index="3">
+                            <div class="project-card">
+                                <h2 class="project-title">Lane Detection and Object Recognition</h2>
+                                <div class="project-content">
+                                    <div>
+                                        <div class="project-image">
+                                            <img src="output_lane.gif" alt="Lane Detection and Object Recognition">
+                                        </div>
+                                        <div class="project-description">
+                                            <a href="https://github.com/Advaith41/Lane-Detection-and-Object-Recognition" class="view-more-btn">
+                                                <i class="fab fa-github"></i> View on GitHub
+                                            </a>
+                                            <p>Implemented a Visual Driving Assistant (VDA) that integrates lane detection and vehicle recognition to enhance road safety. The system uses YOLOv8 for vehicle detection and traditional image processing methods like Canny Edge Detection and Hough Transform for lane detection, for real-time alerts.</p>
+                                        </div>
+                                        <div class="project-technologies">
+                                            <span class="tool-tag">Python</span>
+                                            <span class="tool-tag">C++</span>
+                                            <span class="tool-tag">OpenCV</span>
+                                            <span class="tool-tag">YOLOv8</span>
+                                            <span class="tool-tag">Canny Edge Detection</span>
+                                            <span class="tool-tag">Jupyter Notebook</span>
+                                            <span class="tool-tag">MATPLOTLIB</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="project-slide" data-index="4">
+                            <div class="project-card">
+                                <h2 class="project-title">Rescue Bot</h2>
+                                <div class="project-content">
+                                    <div>
+                                        <div class="project-image">
+                                            <img src="rescue.gif" alt="Rescue Bot">
+                                        </div>
+                                        <div class="project-description">
+                                            <a href="https://drive.google.com/drive/u/4/folders/127emeB6GSvDGSfEIXgkjM6FcWOcscMLS" class="view-more-btn">
+                                                <i class="fab fa-github"></i> View on GitHub
+                                            </a>
+                                            <p>Developed a Dexterous Robotic Arm prototype for rescue operations, integrating sensors and electromechanical assemblies controlled via Raspberry Pi and flex sensors with a 20 lb payload. Designed modular housing using Solidworks, while integrating SPI/I2C interfaces.</p>
+                                        </div>
+                                        <div class="project-technologies">
+                                            <span class="tool-tag">Solidworks</span>
+                                            <span class="tool-tag">Raspberry Pi</span>
+                                            <span class="tool-tag">Ansys Fluent</span>
+                                            <span class="tool-tag">3D Printing</span>
+                                            <span class="tool-tag">SPI/I2C Interfaces</span>
+                                            <span class="tool-tag">Simulink</span>
+                                            <span class="tool-tag">SICA Award</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="project-nav-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="project-indicators">
+                    <span class="project-indicator active" data-index="0"></span>
+                    <span class="project-indicator" data-index="1"></span>
+                    <span class="project-indicator" data-index="2"></span>
+                    <span class="project-indicator" data-index="3"></span>
+                    <span class="project-indicator" data-index="4"></span>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="content-section">
+                <h1 class="section-title">Experience</h1>
+                
+                <!-- Navigation bar -->
+                <div class="experience-nav-container">
+                    <button class="nav-arrow left" id="scrollLeft">←</button>
+                    <div class="experience-nav">
+                        <div class="company-list">
+                            <button class="company-btn" data-tab="rainier">RAINIER LABS</button>
+                            <button class="company-btn" data-tab="waters">WATERS CORPORATION</button>
+                            <button class="company-btn" data-tab="northeastern">NORTHEASTERN UNIVERSITY</button>
+                            <button class="company-btn" data-tab="vyjayanthi">VYJAYANTHI MOVIES</button>
+                            <button class="company-btn" data-tab="auv">AUV SOCIETY</button>
+                        </div>
+                    </div>
+                    <button class="nav-arrow right" id="scrollRight">→</button>
+                </div>
+
+                <!-- Experience Details -->
+                <div class="experience-details">
+                    <!-- Rainier Labs -->
+                    <div id="rainier" class="experience-content active">
+                        <h2>Robotics Engineer <span class="company-name">@ <a href="https://rainier-labs.replit.app/" target="_blank" class="company-link">Rainier Labs</a></span></h2>
+                        <p class="duration">DEC 2024 - PRESENT</p>
+                        <ul class="responsibility-list">
+                            <li>Integrated NVIDIA Isaac ROS libraries of Visual Odometry to deploy on a Robot Dog prototype via Nvidia Jetson Orin Nano to perform motion tracking, pose estimation and 3D reconstruction using an Intel Realsense D455 RGBD camera with a built-in 9-axis IMU.</li>
+                            
+                            <li>Simulated the robot behavior on IsaacSim, and visualized the SLAM-related data like VO path, SLAM path, Odometry, Velocity, Left & Right images and 3D pointclouds on RViz.</li>
+                            
+                            <li>Designed on Onshape and Validated the Mechanical Design of the Dog using FEA tools like Hyperworks.</li>
+                            
+                            <li>Managed the early-phase Ad campaigns on LinkedIn and analysed the website conversions along with target audiences & market demographics.</li>
+                            
+                            <li>Conducted Sales emails and calls automation using apollo.io and managed all the social media accounts of the company including X, Instagram, LinkedIn and Reddit.</li>
+                        </ul>
+
+                        <div class="tools-used">
+                            <span class="tool-tag">Nvidia Isaac Lab</span>
+                            <span class="tool-tag">Intel Realsense</span>
+                            <span class="tool-tag">ROS2</span>
+                            <span class="tool-tag">Rviz</span>
+                            <span class="tool-tag">Apollo.io</span>
+                            <span class="tool-tag">Onshape</span>
+                            <span class="tool-tag">Solidworks</span>
+                            <span class="tool-tag">Hyperworks</span>
+                            <span class="tool-tag">CUDA</span>
+                            <span class="tool-tag">Docker</span>
+                            <span class="tool-tag">Python</span>
+                            <span class="tool-tag">C++</span>
+                            <span class="tool-tag">Linux</span>
+                        </div>
+                    </div>
+
+                    <!-- Waters Corporation -->
+                    <div id="waters" class="experience-content">
+                        <h2>Research and Development Co-op <span class="company-name">@ <a href="https://www.waters.com/nextgen/us/en.html" target="_blank" class="company-link">Waters Corporation</a></span></h2>
+                        <p class="duration">JUN 2023 - DEC 2023</p>
+                        <ul class="responsibility-list">
+                            <li>Led cross-functional collaboration to deliver technical documentation and BOMs, streamlining project handoffs and reducing design iteration cycles by 30% to enhance customer satisfaction with product deployment. Conducted testing and error tracking on robotic assemblies, ensuring system functionality and reducing failure rates by 20% using detailed debugging processes and comprehensive system monitoring.</li>
+                            
+                            <li>Spearheaded the design and optimization of precision electromechanical assemblies for semiconductor systems, utilizing SolidWorks and Ansys Fluent to achieve sub-micron tolerances and improve reliability by 15%, directly addressing customer quality requirements.</li>
+                            
+                            <li>Collaborated across teams to design and document robotic test strategies, reducing error rates by 30% and provided customer-centric training for operational teams, simplifying complex maintenance plans to improve assembly accuracy by 20%.</li>
+                            
+                            <li>Engineered an optimization apparatus for semiconductor setups, employing Ansys Fluent for simulations and performance analysis. Reduced process time by 30%, improving protein cell flow efficiency during chromatography and ensuring accuracy at temperatures up to 500°C.</li>
+                            
+                            <li>Created detailed CAD models, BOMs, and technical documentation for electromechanical systems, streamlining the handoff to cross-functional teams and reducing design iteration cycles by 30%.</li>
+                            
+                            <li>Developed a user-friendly app for real-time monitoring, utilizing SolidWorks for product simulations and 3D printing of internal components. This streamlined product deployment by 25% and improved real-time system insights for engineers.</li>
+                        </ul>
+
+                        <div class="tools-used">
+                            <span class="tool-tag">Solidworks</span>
+                            <span class="tool-tag">Ansys Fluent</span>
+                            <span class="tool-tag">GD&T</span>
+                            <span class="tool-tag">Python</span>
+                            <span class="tool-tag">C++</span>
+                            <span class="tool-tag">Microsoft Office</span>
+                            <span class="tool-tag">Linux</span>
+                            <span class="tool-tag">Proto.pie</span>
+                            <span class="tool-tag">HTML</span>
+                            <span class="tool-tag">CSS</span>
+                            <span class="tool-tag">JavaScript</span>
+                            <span class="tool-tag">3D Printing</span>
+                            <span class="tool-tag">Laser Cutting</span>
+                            <span class="tool-tag">Milling</span>
+                            <span class="tool-tag">CNC</span>
+                            <span class="tool-tag">Lathe</span>
+                        </div>
+                    </div>
+
+                    <!-- Northeastern University -->
+                    <div id="northeastern" class="experience-content">
+                        <h2>Teaching Assistant <span class="company-name">@ <a href="https://www.northeastern.edu/" target="_blank" class="company-link">Northeastern University</a></span></h2>
+                        <p class="duration">SEP 2023 - DEC 2024</p>
+                        <p class="course-info">Electrical Engineering - EECE 2210, EECE 2211 (Lab)</p>
+                        
+                        <ul class="responsibility-list">
+                            <li>Provided comprehensive guidance to students in understanding fundamental electrical engineering concepts, including circuit analysis, Kirchhoff's laws, and component behaviors (resistors, capacitors, inductors).</li>
+                            
+                            <li>Conducted regular TA office hours to address student queries, providing one-on-one support for complex electrical engineering concepts and circuit analysis problems.</li>
+                            
+                            <li>Supervised laboratory sessions ensuring safety protocols, proper circuit setup, and prevention of hazardous conditions including overload and short circuits.</li>
+                            
+                            <li>Guided students through practical applications including AC circuits, electric power, semiconductor devices, transistor amplifier models, and mechanical controls.</li>
+                            
+                            <li>Oversaw and evaluated student performance in both theoretical concepts and practical lab work, covering topics from basic DC/AC electrical concepts to analog and digital electronics.</li>
+                            
+                            <li>Monitored and assisted students with circuit construction and testing, ensuring proper use of safety equipment and adherence to laboratory protocols.</li>
+                            
+                            <li>Facilitated understanding of advanced topics including transient circuit analysis, mechatronics, digital signals, logic circuits, and fundamental computer operations.</li>
+                        </ul>
+
+                        <div class="tools-used">
+                            <span class="tool-tag">Circuit Analysis</span>
+                            <span class="tool-tag">Lab Safety</span>
+                            <span class="tool-tag">Electronics</span>
+                            <span class="tool-tag">Digital Logic</span>
+                            <span class="tool-tag">Mechatronics</span>
+                            <span class="tool-tag">AC/DC Circuits</span>
+                            <span class="tool-tag">Circuit Simulation</span>
+                            <span class="tool-tag">Test Equipment</span>
+                        </div>
+                    </div>
+
+                    <!-- Vyjayanthi Movies -->
+                    <div id="vyjayanthi" class="experience-content">
+                        <h2>Product Design Engineer <span class="company-name">@ <a href="https://www.instagram.com/vyjayanthimovies/" target="_blank" class="company-link">Vyjayanthi Movies</a></span></h2>
+                        <p class="duration">AUG 2021 - AUG 2022</p>
+                        <p class="project-info">Project: Kalki 2898 AD (starring Prabhas, Amitabh Bachchan, Kamal Haasan, Deepika Padukone)</p>
+                        
+                        <ul class="responsibility-list">
+                            <li>Collaborated with a team of 5 Product Designers to create a full-scale vehicle prop for the sci-fi film "Kalki 2898 AD," overseeing the 3D printing of a miniature version. Integrated motors, motor drivers, RC systems, and microcontrollers to support complex VFX scenes, ensuring seamless synchronization with CGI enhancements.</li>
+                            
+                            <li>Engineered a blow-molded acrylic windshield using an industrial oven at 340°F for precise shaping and clarity. Designed a levitation mechanism for a scaled model, enhancing visual effects and achieving a 25% improvement in VFX realism.</li>
+                            
+                            <li>Worked closely with production design and visual effects teams to optimize the aesthetic and functional design of the prop. Managed assembly and testing to meet strict filming schedules, ensuring the prop met high-quality standards and contributing to the project's overall success.</li>
+                            
+                            <li>Led risk identification, failure analysis, and functional design processes while collaborating with VFX teams. Utilized manual machining techniques and managed complex assembly processes to meet production deadlines.</li>
+                            
+                            <li>Led the design and validation of tooling for complex mechanical parts, incorporating industry-standard design practices such as ANSI Y-14.5. Conducted DFMEA and prototyping for functional validation, ensuring high-precision organized workloads that met the production deadlines.</li>
+                        </ul>
+
+                        <div class="tools-used">
+                            <span class="tool-tag">3D Printing</span>
+                            <span class="tool-tag">CAD Design</span>
+                            <span class="tool-tag">VFX Integration</span>
+                            <span class="tool-tag">Motor Control</span>
+                            <span class="tool-tag">RC Systems</span>
+                            <span class="tool-tag">Microcontrollers</span>
+                            <span class="tool-tag">DFMEA</span>
+                            <span class="tool-tag">ANSI Y-14.5</span>
+                            <span class="tool-tag">Prototyping</span>
+                            <span class="tool-tag">Manual Machining</span>
+                            <span class="tool-tag">Blow Molding</span>
+                            <span class="tool-tag">Assembly Design</span>
+                            <span class="tool-tag">Technical Documentation</span>
+                            <span class="tool-tag">Project Management</span>
+                            <span class="tool-tag">CGI Integration</span>
+                        </div>
+                    </div>
+
+                    <!-- AUV Society -->
+                    <div id="auv" class="experience-content">
+                        <h2>Robotics Lead Engineer <span class="company-name">@ <a href="https://www.auvsocietyindia.com/" target="_blank" class="company-link">AUV Society</a></span></h2>
+                        <p class="duration">MAR 2020 - AUG 2021</p>
+                        
+                        <ul class="responsibility-list">
+                            <li>Led the mechanical design and fabrication of an Autonomous Underwater Vehicle (AUV) by overseeing end-to-end development using SolidWorks and Fusion 360 for CAD modeling. Improved design efficiency and reduced system weight by 10%, enhancing operational performance.</li>
+                            
+                            <li>Tested and validated the AUV's design in virtual environments like ROS and Gazebo, performing rigorous simulations to ensure system reliability. Fabricated and validated multi-axis robotic assemblies with custom actuator and bearing systems, enhancing performance under dynamic loading conditions.</li>
+                            
+                            <li>Reduced manufacturing costs by 19% by integrating advanced manufacturing methods such as 3D printing and blow molding. Streamlined fabrication processes, improving production speed and lowering material waste for more cost-effective vehicle assembly.</li>
+                            
+                            <li>Calibrated stereo cameras and other sensors for the AUV, building algorithms for image processing, feature extraction, and object detection. Utilized 3D reconstruction and stereo vision to improve navigation precision, enhancing object detection accuracy by 20%.</li>
+                            
+                            <li>Partnered with stakeholders to integrate 3D printing and advanced manufacturing techniques, reducing production costs by 19% and expediting fabrication timelines for customer-ready solutions.</li>
+                            
+                            <li>Validated gear system prototypes through ROS and Gazebo simulations, ensuring reliability under real-world operational conditions. Integrated torque sensors and instrumentation to improve actuator testing accuracy, leading to a 17% improvement in data reliability.</li>
+                            
+                            <li>Designed robust PCBA for underwater robotic systems, integrating UART and SPI protocols for sensor communication, improving data acquisition accuracy by 20%. Developed a battery management solution for prolonged underwater operation, increasing power efficiency by 15%.</li>
+                            
+                            <li>Engineered a multi-sensor fusion system for an AUV, incorporating IMU, depth sensors, and cameras, which enhanced navigation precision by 30% during underwater missions. Implemented signal processing pipelines in ROS to process and filter sensor data, improving object detection reliability by 15%.</li>
+                        </ul>
+
+                        <div class="tools-used">
+                            <span class="tool-tag">SolidWorks</span>
+                            <span class="tool-tag">Fusion 360</span>
+                            <span class="tool-tag">ROS</span>
+                            <span class="tool-tag">Gazebo</span>
+                            <span class="tool-tag">3D Printing</span>
+                            <span class="tool-tag">OpenCV</span>
+                            <span class="tool-tag">Computer Vision</span>
+                            <span class="tool-tag">Image Processing</span>
+                            <span class="tool-tag">Stereo Vision</span>
+                            <span class="tool-tag">PCBA Design</span>
+                            <span class="tool-tag">UART</span>
+                            <span class="tool-tag">SPI</span>
+                            <span class="tool-tag">Sensor Fusion</span>
+                            <span class="tool-tag">IMU</span>
+                            <span class="tool-tag">Signal Processing</span>
+                            <span class="tool-tag">Python</span>
+                            <span class="tool-tag">C++</span>
+                            <span class="tool-tag">CAD</span>
+                            <span class="tool-tag">FEA</span>
+                            <span class="tool-tag">Battery Management</span>
+                            <span class="tool-tag">Robotics</span>
+                            <span class="tool-tag">Mechanical Design</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="content-section">
+                <h1 class="section-title">Education</h1>
+                
+                <div class="education-container">
+                    <!-- Northeastern University -->
+                    <div class="education-item">
+                        <div class="edu-image">
+                            <img src="NU Logo.jpg" alt="Northeastern University">
+                        </div>
+                        <div class="edu-content">
+                            <h2>Master of Science - Robotics</h2>
+                            <h3>Northeastern University</h3>
+                            <p class="duration">SEP 2022 - DEC 2024</p>
+                            <p class="coursework">Relevant coursework: Robot Sensing and Navigation, Robot Mechanics and Control, Legged Robots, Pattern Recognition and Computer Vision, Robotic Science and Systems, Control Systems Engineering, Human Computer Interaction, Product Development for Engineers</p>
+                        </div>
+                    </div>
+
+                    <!-- Stanford University -->
+                    <div class="education-item">
+                        <div class="edu-image">
+                            <img src="Stanford Logo.jpg" alt="Stanford University">
+                        </div>
+                        <div class="edu-content">
+                            <h2>Introduction to Robotics</h2>
+                            <h3>Stanford University</h3>
+                            <p class="duration">SPRING 2022</p>
+                            <p class="instructor">Prof. Oussama Khatib</p>
+                        </div>
+                    </div>
+
+                    <!-- IIITDM -->
+                    <div class="education-item">
+                        <div class="edu-image">
+                            <img src="IIITDM Logo.jpg" alt="IIITDM Chennai">
+                        </div>
+                        <div class="edu-content">
+                            <h2>Bachelor of Technology - Mechanical Engineering</h2>
+                            <h3>Indian Institute of Information Technology Design and Manufacturing, Chennai</h3>
+                            <p class="specialization">Specialisation in Smart Manufacturing</p>
+                            <p class="duration">SEP 2018 - MAY 2022</p>
+                            <p class="coursework">Relevant coursework: Computer Engineering, Engineering Mechanics, Engineering Skills, Engineering Electromagnetics, Basic Electrical and Electronics Engineering, Industrial Design Sketching, Production Drawing, Manufacturing Processes, Electrical Drives, Sensors and Controls, Operations and Supply Chain Management, Robotics and Automation, Quality Engineering, Mechanical Design, Design Optimization</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="content-section">
+                <h1 class="section-title">Contact</h1>
+                <div class="location-container">
+                    <h2 class="location-title">San Jose</h2>
+                    <p class="location-subtitle">California</p>
+                    
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101754.19070459644!2d-121.97607167226457!3d37.41110910820076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fc94b5499a8f9%3A0xb7fff0fb15b0bbf5!2sSan%20Jose%2C%20CA%2095134!5e0!3m2!1sen!2sus!4v1710271547943!5m2!1sen!2sus"
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <div class="map-actions">
+                        <button onclick="window.open('https://www.google.com/maps/dir//San+Jose,+CA+95134')" class="directions-btn">
+                            <i class="fas fa-directions"></i>
+                            Directions
+                        </button>
+                        <a href="https://www.google.com/maps?q=San+Jose,+CA+95134" target="_blank" class="view-map-link">
+                            View larger map
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Contact Form</h2>
+                    <form action="https://formsubmit.co/kandiraju.v@northeastern.edu" method="POST" class="contact-form" id="contactForm">
+                        <!-- Honeypot to prevent spam -->
+                        <input type="text" name="_honey" style="display: none">
+                        
+                        <!-- Disable Captcha -->
+                        <input type="hidden" name="_captcha" value="false">
+                        
+                        <!-- Disable multiple submissions -->
+                        <input type="hidden" name="_next" value="false">
+                        
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+                        <div class="submission-status" id="submissionStatus"></div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right: Navigation Sidebar -->
+        <aside class="navigation-sidebar">
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            
+            <!-- Navigation Sections -->
+            <div class="nav-sections">
+                <a href="#about" class="nav-section">About</a>
+                <a href="#projects" class="nav-section">Projects</a>
+                <a href="#experience" class="nav-section">Experience</a>
+                <a href="#education" class="nav-section">Education</a>
+                <a href="#contact" class="nav-section">Contact me</a>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

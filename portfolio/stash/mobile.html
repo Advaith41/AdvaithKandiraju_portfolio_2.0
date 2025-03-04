@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advaith Kandiraju</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Inline styles for immediate effect */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #242424;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        .nav-item {
+            color: #e0e0e0;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .nav-item i {
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        .nav-item.active {
+            color: #CD7F32;
+        }
+
+        .mobile-section {
+            display: none;
+            padding: 20px;
+            margin-top: 70px;
+        }
+
+        .mobile-section.active {
+            display: block;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav class="mobile-nav">
+        <a href="#profile" class="nav-item">
+            <i class="fas fa-user-circle"></i>
+            <span>Profile</span>
+        </a>
+        <a href="#about" class="nav-item">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="#projects" class="nav-item">
+            <i class="fas fa-code"></i>
+            <span>Projects</span>
+        </a>
+        <a href="#experience" class="nav-item">
+            <i class="fas fa-briefcase"></i>
+            <span>Experience</span>
+        </a>
+        <a href="#education" class="nav-item">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Education</span>
+        </a>
+        <a href="#contact" class="nav-item">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <div id="profile" class="mobile-section">
+        <h1>Profile</h1>
+        <!-- Profile content -->
+    </div>
+
+    <div id="about" class="mobile-section">
+        <h1>About</h1>
+        <!-- About content -->
+    </div>
+
+    <div id="projects" class="mobile-section">
+        <h1>Projects</h1>
+        <!-- Projects content -->
+    </div>
+
+    <div id="experience" class="mobile-section">
+        <h1>Experience</h1>
+        <!-- Experience content -->
+    </div>
+
+    <div id="education" class="mobile-section">
+        <h1>Education</h1>
+        <!-- Education content -->
+    </div>
+
+    <div id="contact" class="mobile-section">
+        <h1>Contact</h1>
+        <!-- Contact content -->
+    </div>
+
+    <script>
+        // Simple navigation script
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.mobile-section');
+            const navItems = document.querySelectorAll('.nav-item');
+
+            function showSection(id) {
+                // Hide all sections
+                sections.forEach(section => {
+                    section.style.display = 'none';
+                    section.classList.remove('active');
+                });
+                
+                // Show selected section
+                const section = document.getElementById(id);
+                if (section) {
+                    section.style.display = 'block';
+                    section.classList.add('active');
+                }
+
+                // Update nav items
+                navItems.forEach(item => {
+                    item.classList.toggle('active', 
+                        item.getAttribute('href') === `#${id}`);
+                });
+            }
+
+            // Handle clicks
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const id = item.getAttribute('href').substring(1);
+                    showSection(id);
+                });
+            });
+
+            // Show initial section
+            const hash = window.location.hash.substring(1);
+            showSection(hash || 'about');
+        });
+    </script>
+</body>
+</html> 
